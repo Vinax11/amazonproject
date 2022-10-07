@@ -1,0 +1,3916 @@
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+void login1();
+void menu();
+void login();
+void oneplus_rec();
+void Samsung_Galaxy_S22_Ultra_Rec();
+void Xiaomi_12_Pro_Rec();
+void Iphone_14_Pro_Max_Rec();
+void Tata_Tea_Premium_Coustomer_Rec();
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec();	
+void NutroActive_Keto_Atta_Coustomer_Rec();
+void Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec();
+void Wakefit_Queen_Wood_Bed_Coustomer_Rec();
+void The_Fabrizzo_Study_Table_Coustomer_Rec();
+void Trevi_Edo_3_Seater_Sofa_Coustomer_Rec();
+void Sattva_Classic_Bean_Bag_Coustomer_Rec();
+void oneplus_update_rec();
+void samsung_update_rec();
+void xiaomi_update_rec();
+void iphone_update_rec();
+void Tata_Tea_Premium_update_Rec();
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_update_Rec();
+void NutroActive_Keto_Atta_update_Rec();
+void Ferrero_Rocher_Premium_update_Coustomer_Rec();
+void Wakefit_Queen_Wood_Bed_update_Rec();
+void The_Fabrizzo_Study_Table_update_Rec();
+void Trevi_Edo_3_Seater_Sofa_update_Rec();
+void Sattva_Classic_Bean_Bag_update_Rec();
+void oneplus_delete_rec();
+void samsung_delete_rec();
+void xiaomi_delete_rec();
+void iphone_delete_rec();
+void Tata_Tea_Premium_delete_Rec();
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_delete_Rec();
+void NutroActive_Keto_Atta_delete_Rec();
+void Ferrero_Rocher_Premium_delete_Coustomer_Rec();
+void Wakefit_Queen_Wood_Bed_delete_Rec();
+void The_Fabrizzo_Study_Table_delete_Rec();
+void Trevi_Edo_3_Seater_Sofa_delete_Rec();
+void Sattva_Classic_Bean_Bag_delete_Rec();
+struct project
+{ 
+ char name[40];
+ char add[40];
+ char email[40];
+ char  ph[20];
+ }coustomer;
+ 
+struct login 
+{
+	char name[20];
+	char pass[20];
+	
+}l;
+
+main()
+{
+	system("color 3");
+	char ch;
+	 int n;   
+	
+	printf("**********************************************************************************************\n");
+	printf("***********************************WELCOME TO AMAZON SHOPPING*********************************\n");
+	printf("**********************************************************************************************");
+
+	printf("\n\n\n\t\t\t\t[-----------LOGIN PAGE-----------]\n");
+
+	printf("\n\t\t\t\t\t1...SIGN UP");
+	
+	printf("\n\n\t\t\t\t\t2.....SIGN IN\n");
+	printf("\n\t\t\t\t[---------------------------------]\n\n");
+	printf("\nSELECT YOUR CHOICE\n");
+	scanf("%d",&n);
+	if(n==1)
+	{
+		
+	
+	 	char u[20],p[20];
+		FILE *fp;
+		fp=fopen("login1.txt","w");
+		printf("\n\t\t\t\t[-------------SIGN UP-------------]\n\n");
+		printf("\n\t\t\t\t\t ENTER USERNAME:");
+		scanf("%s",l.name);
+		printf("\n\t\t\t\t\t ENTER PASSWORD:");
+		scanf("%s",l.pass);
+	
+		fprintf(fp,"\n\n%s \n\n%s",l.name,l.pass);
+	    printf("\n\n\t\t\t\t\t*REGISTRATION DONE*\n");
+	    printf("\n\t\t\t\t[----------------------------------]\n\n");
+	    system("cls");
+	
+		fclose(fp);
+		
+		 login1();
+    }
+	else if(n==2)
+	{
+		login();
+		
+	}
+	else if(n>=2)
+	{
+		printf("\nPLEASE ENTER RIGHT LOGIN ....");
+	}
+   
+	
+
+}
+void login1()
+{
+	char ch;
+	printf("\nDO U WANT TO SIGN IN RIGHT NOW PRESS 'y'\n ");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		login();	
+	
+    }
+	
+	
+	
+	
+}
+
+void login()
+{
+			    char u[20],p[20];
+			    printf("\n\t\t\t\t[-------------SIGN IN-------------]\n\n");
+		        printf("\n\t\t\t\t\t ENTER USERNAME:");
+				scanf("%s",u);
+				printf("\n\t\t\t\t\t ENTER PASSWORD:");
+				scanf("%s",p);
+			
+				FILE *fp1;
+				fflush(stdin);
+	
+				fp1=fopen("login1.txt","r");
+				
+				while(fscanf(fp1,"\n %s %s",l.name,l.pass)!=EOF)
+				{
+					
+					if(((strcmp(l.name,u)==0))&&((strcmp(l.pass,p)==0)))
+			   		{
+			    		printf("\n \n\t\t\t\t\t *LOGIN CORRECT* \n");	
+			    		printf("\n\t\t\t\t[---------------------------------]\n\n");
+			    	     system("cls");
+						menu();
+			   	 	}			 		
+		    	    else 
+			        {
+		 	        	printf("\n \n\t\t\t\t \t*LOGIN INCORRECT*\n");	
+			        	printf("\n\t\t\t\t[---------------------------------]\n\n");
+			             system("cls");
+			        	login();
+ 		   	        }
+ 		   	    	fclose(fp1);
+                }
+			
+	
+		
+}
+void oneplus_delete_rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+	   
+		FILE *fp,*fp1;
+		printf("\n\t\t\t[-------------------------*ONEPLUS 10T 5G CUSTOMER RECORDS*---------------------------]\n");
+		fp=fopen("OnePlus_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n\t\t\t\tENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE:");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\n\t\t\t\t\t\t*RECORD FOUND*");
+			    printf("\n\t\t\t\tname=%s\n\t\t\t\tadd=%s\n\t\t\t\temail=%s\n\t\t\t\tphone=%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("OnePlus_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\n\t\t\t\t\t\t*RECORD DELETED*");
+				printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+				fclose(fp);
+    	        fclose(fp1);
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\n\t\t\t\t\t*RECORD  NOT FOUND*");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		
+		
+    
+
+}
+void samsung_delete_rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+		
+    
+
+}
+void xiaomi_delete_rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Xiaomi_12_Pro_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Xiaomi_12_Pro_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void iphone_delete_rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Tata_Tea_Premium_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+		
+    
+
+}
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+		
+    
+
+}
+void NutroActive_Keto_Atta_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Ferrero_Rocher_Premium_delete_Coustomer_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Wakefit_Queen_Wood_Bed_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+		
+    
+
+}
+void The_Fabrizzo_Study_Table_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+		
+    
+
+}
+void Trevi_Edo_3_Seater_Sofa_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void Sattva_Classic_Bean_Bag_delete_Rec()
+{
+	   char ch,n[30],field[20],newdata[20];
+		FILE *fp,*fp1;
+		fp=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCANNOTN OPEN FILE\n");
+	}
+	printf("\n ENTER COUSTOMER NAME WHOSE RECORD YOU WANT TO DELETE\n");
+	scanf("%s",n);
+	
+	
+	while(fscanf(fp,"%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\nRECORD FOUND");
+			    printf("%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);	
+		
+				fp1=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","r+");	
+				strcpy(coustomer.name,"                    ");
+				strcpy(coustomer.add,"                      ");
+				strcpy(coustomer.email,"                    ");
+				strcpy(coustomer.ph,"                       ");
+				
+				fprintf(fp1,"%s%s%s%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\nRECORD DELETED");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+		}
+		else
+		{
+				printf("\nRECORD  NOT FOUND");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+						menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+		}
+	}
+		fclose(fp);
+    	fclose(fp1);
+	
+}
+void oneplus_rec()
+{   
+    char ch;
+    printf("\n\t\t\t[-------------------------*ONEPLUS 10T 5G CUSTOMER RECORDS*---------------------------]\n");
+
+    FILE *fp;
+	fp=fopen("OnePlus_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+	
+}
+void Samsung_Galaxy_S22_Ultra_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*SAMSUNG GALAXY S22 ULTRA CUSTOMER RECORDS*----------------------]\n");
+	
+    FILE *fp;
+	fp=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[------------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Xiaomi_12_Pro_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*XIAOMI 12 PRO CUSTOMER RECORDS*---------------------------]\n");
+    FILE *fp;
+	fp=fopen("Xiaomi_12_Pro_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Iphone_14_Pro_Max_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*IPHONE 14 PRO MAX CUSTOMER RECORDS*---------------------------]\n");
+
+    FILE *fp;
+	fp=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[-------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Tata_Tea_Premium_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*TATA TEA PREMIUM CUSTOMER RECORDS*---------------------------]\n");
+
+    FILE *fp;
+	fp=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*AASHIRVAAD SVASTI PURE COW GHEE DWSI GHEE CUSTOMER RECORDS*---------------------------]\n");
+	printf("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[--------------------------------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void NutroActive_Keto_Atta_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*NUTROACTIVE KETO ATTA CUSTOMER RECORDS*---------------------------]\n");
+	
+    FILE *fp;
+	fp=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[-----------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*FERRERO ROCHER PREMIUM CHOCOLATE CUSTOMER RECORDS*---------------------------]\n");
+	
+    FILE *fp;
+	fp=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","r");
+	if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+    
+}
+void Wakefit_Queen_Wood_Bed_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*WAKEFIT QUEEN WOOD BED CUSTOMER RECORDS*---------------------------]\n");
+
+    FILE *fp;
+	fp=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[-----------------------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void The_Fabrizzo_Study_Table_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*THE FABRIZZO STUDY TABLE CUSTOMER RECORDS*---------------------------]\n");
+	
+    FILE *fp;
+	fp=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Trevi_Edo_3_Seater_Sofa_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[-------------------------*TREVI EDO 3 SEATER SOFA CUSTOMER RECORDS*---------------------------]\n");
+	
+    FILE *fp;
+	fp=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[-------------------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void Sattva_Classic_Bean_Bag_Coustomer_Rec()
+{
+	char ch;
+	printf("\n\t\t\t[--------------------------*SATTVA CLASSIC BEAN BAG CUSTOMER RECORDS*---------------------------]\n");
+	printf("\nSattva_Classic_Bean_Bag_Coustomer_Records");
+    FILE *fp;
+	fp=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","r");
+    if(fp==NULL)
+    {   
+     	printf("\n\t\t\t\t\t*YOU DONT HAVE ANY RECORD YET*\n");
+                    	 
+    }
+   	while(fscanf(fp,"\n%s  \n%s  \n%s  \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+  	printf("\n\t\t\t\t\t\tNAME:%s\n\t\t\t\t\t\tADD:%s\n\t\t\t\t\t\tEMAIL:%s\n\t\t\t\t\t\tPHONENO:%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+  	printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+   	fclose(fp);
+   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+	fflush(stdin);
+	scanf("%c",&ch);
+	if((ch=='Y')||(ch=='y'))
+	{
+		menu();
+					   	 	
+	}
+	else if((ch=='N')||(ch=='n'))
+	{
+		login();
+	}
+}
+void oneplus_update_rec() 
+{
+	char n[30],field[20],newdata[20],ch;
+	printf("\n\t\t\t[-------------------------*ONEPLUS 10T 5G CUSTOMER RECORDS*---------------------------]\n");
+	FILE *fp,*fp1;
+	fp=fopen("OnePlus_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n\t\t\t\tENTER PERSON NAME WHOSE RECORD YOU WANT TO UPDATE:");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("\n\t\t\t\t\t\t\t*RECORD FOUND*\n");
+		
+			printf("\n\t\t\t\t\t1.NAME=%s\n\t\t\t\t\t2.ADD=%s\n\t\t\t\t\t3.EMAIL=%s\n\t\t\t\t\t4.PHONENO=%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n\n\t\t\t\tENTER FIELD NAME WHICH YOU WANT TO UPDATE:");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("\n\t\t\t\tENTER NEW DATA:");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("OnePlus_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("\n\t\t\t\t\t\t\t*RECORD UPDATE'D*");
+				fclose(fp);
+	            fclose(fp1);
+				printf("\n\n\n\t\t\t[---------------------------------------------------------------------------------]");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("OnePlus_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				fclose(fp);
+	            fclose(fp1);
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("OnePlus_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				fclose(fp);
+	            fclose(fp1);
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("OnePlus_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				fclose(fp);
+	            fclose(fp1);
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	
+}
+void samsung_update_rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void xiaomi_update_rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Xiaomi_12_Pro_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Xiaomi_12_Pro_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Xiaomi_12_Pro_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Xiaomi_12_Pro_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Xiaomi_12_Pro_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void iphone_update_rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+			    printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Tata_Tea_Premium_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+			    printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void NutroActive_Keto_Atta_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+			   	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Ferrero_Rocher_Premium_update_Coustomer_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+			    printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Wakefit_Queen_Wood_Bed_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void The_Fabrizzo_Study_Table_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Trevi_Edo_3_Seater_Sofa_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+		
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+void Sattva_Classic_Bean_Bag_update_Rec()
+{
+	char n[30],field[20],newdata[20],ch;
+	FILE *fp,*fp1;
+	fp=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("\nCannot open file\n");
+	}
+	printf("\n Enter person name whose rec u want to update");
+	scanf("%s",n);
+	
+	while(fscanf(fp,"%s%s%s%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph)!=EOF)
+	{
+	
+		if(strcmp(coustomer.name,n)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+			
+			printf("\n Enter field name which u want to update");
+			scanf("%s",field);
+			if(strcmp(field,"name")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.name);
+				
+				fp1=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+				
+			}
+			else if(strcmp(field,"add")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.add);
+				
+				fp1=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"email")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.email);
+				
+				fp1=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else if(strcmp(field,"phone")==0)
+			{
+				printf("Enter new data");
+				
+				scanf("%s",coustomer.ph);
+				
+				fp1=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","w");	
+	        	fprintf(fp1,"\n%s\n%s\n%s\n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+		
+				printf("RECORD UPDATE'D");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+			else
+			{
+				printf("\nRECORD  NOT FOUND\n");
+				printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+				fflush(stdin);
+				scanf("%c",&ch);
+				if((ch=='Y')||(ch=='y'))
+				{
+					menu();
+					   	 	
+				}
+				else if((ch=='N')||(ch=='n'))
+				{
+					login();
+				}
+			}
+		}
+	
+		
+	}	
+	fclose(fp);
+	fclose(fp1);
+}
+
+
+
+void menu()
+{
+		int ch,no,n1,n2;
+		printf("\n\t\t\t\t[---------------MENU---------------]\n");
+		printf("\n\t\t\t\t\t1.....SHOPPING");
+		printf("\n\t\t\t\t\t2.....SHOW RECORD");
+		printf("\n\t\t\t\t\t3.....UPDATE RECORD");
+		printf("\n\t\t\t\t\t4.....DELETE RECORD");
+		printf("\n\t\t\t\t\t5.....menu TO LOGIN PAGE");
+		printf("\n\t\t\t\t\t6.....EXIT\n");
+		printf("\n\t\t\t\t[-----------------------------------]\n\n");
+	
+		printf("\nSELECT YOUR CHOICE\n");
+		
+		scanf("%d",&ch);
+		
+		switch(ch)
+		{
+			case 1: printf("\n\t\t\t\t[---------------SHOPPING---------------]\n");
+    	           
+    	           printf("\n\t\t\t\t\t1.....SMARTPHONES");
+    	           printf("\n\t\t\t\t\t2.....GROCERIES");
+    	           printf("\n\t\t\t\t\t3....FURNITURE\n");
+    	           printf("\n\t\t\t\t[-----------------------------------]\n\n");
+    	
+    	           printf("\nSELECT YOUR CHOICE\n");
+	               scanf("%d",&no);
+	          
+	        	  if(no==1)
+	        	  {
+				  
+	        	  		     printf("\n\t\t\t\t[---------------SMARTPHONES---------------]\n");
+	       		   			 printf("\n\t\t\t\t\t1...ONEPLUS 10T 5G");
+							 printf("\n\t\t\t\t\t2...SAMSUNG GALAXY S22 ULTRA 5G");
+							 printf("\n\t\t\t\t\t3...XIAOMI 12 PRO 5G");
+							 printf("\n\t\t\t\t\t4...IPHONE 14 PRO MAX\n");
+							 printf("\n\t\t\t\t[-----------------------------------------]\n\n");
+					
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n1);
+							 switch(n1)
+					 		 {
+							   	case 1:  printf("\n\t\t\t\t[-------------------------*ONEPLUS 10T 5G*---------------------------]\n");
+					 		    		
+					 					printf("\n\t\t\t\t\tBrand:\t\t\t\tOneplus");
+					 					printf("\n\t\t\t\t\tModel Name:\t\t\tOneplus 10T 5G");
+										printf("\n\t\t\t\t\tOS:\t\t\t\tOxygenOS");
+										printf("\n\t\t\t\t\tMemory Storage Capacity:\t128GB");
+					 					printf("\n\t\t\t\t\tColour:\t\t\t\tMoonstone Black");
+					 					printf("\n\t\t\t\t\tProcessor:\t\t\tSnapdragon 8Gen+");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 49,999.00");
+					 					printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n ");
+					 				
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                    					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                    				 		 FILE *fp1;
+                    				     	fp1=fopen("OnePlus_coustomer_rec.txt","a");
+                        				 	fflush(stdin);
+											 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 	printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 	scanf("%s",coustomer.name);
+											fflush(stdin);
+                         					printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+										 	scanf("%s",coustomer.add);
+                        				 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+										 	scanf("%s",coustomer.email);
+                         					printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+										 	scanf("%s",coustomer.ph);
+                         					fprintf(fp1,"%s \n%s \n%s \n%s\n",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 					printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 					fclose(fp1);
+					   	 					printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   	 			
+					   	 					printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+											fflush(stdin);
+											scanf("%c",&ch);
+											if((ch=='Y')||(ch=='y'))
+											{
+													menu();
+					   	 	
+										    }
+											else if((ch=='N')||(ch=='n'))
+											{
+												login();
+											}  
+                         					 
+                         				
+				     					}	
+                     	                 	break;
+					            case 2:
+					            	    printf("\n\t\t\t\t[-------------------------*SAMSUNG GALAXY S22 ULTRA 5G*---------------------------]\n");
+				 						printf("\n\t\t\t\t\tBrand:\t\t\t\tSamsung");
+				 						printf("\n\t\t\t\t\tModel Name:\t\t\tSamsung Galaxy S22 Ultra 5G");
+										printf("\n\t\t\t\t\tOS:\t\t\t\tAndroid 12");
+										printf("\n\t\t\t\t\tMemory Storage Capacity:\t512GB");
+				 						printf("\n\t\t\t\t\tColour:\t\t\t\tDark Red");
+				 						printf("\n\t\t\t\t\tProcessor:\t\t\tSnapdragon 8Gen+1");
+				 						printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 91,450.00");
+				 						printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{
+                     	
+                     						 FILE *fp2;
+                         					fp2=fopen("Samsung_Galaxy_S22_Ultra_coustomer_rec.txt","a");
+                         					fflush(stdin);            
+                         					printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 	printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 	scanf("%s",coustomer.name);
+											fflush(stdin);
+                         					printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+										 	scanf("%s",coustomer.add);
+                        				 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+										 	scanf("%s",coustomer.email);
+                         					printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+										 	scanf("%s",coustomer.ph);
+                         					fprintf(fp2,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 					printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 					fclose(fp2);
+					   	 					printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+											fflush(stdin);
+											scanf("%c",&ch);
+											if((ch=='Y')||(ch=='y'))
+											{
+													menu();
+					   	 	
+										    }
+											else if((ch=='N')||(ch=='n'))
+											{
+												login();
+											}  
+                         					
+                         					
+					 				    }
+					 				    	break;
+					 	        case 3: printf("\n\t\t\t\t[-------------------------*XIAOMI 12 PRO 5G*---------------------------]\n");
+							 		   
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tXiaomi");
+									 	printf("\n\t\t\t\t\tModel Name:\t\t\tT21");
+										printf("\n\t\t\t\t\tOS:\t\t\t\tMIUI 13 Android");
+										printf("\n\t\t\t\t\tMemory Storage Capacity:\256GB");
+					 					printf("\n\t\t\t\t\tColour:\t\t\t\tCouture Blue");
+					 					printf("\n\t\t\t\t\tProcessor:\t\t\tSnapdragon 8Gen+1");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 62,999.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp3;
+                         					fp3=fopen("Xiaomi_12_Pro_coustomer_rec.txt","a");
+                         					fflush(stdin);            
+                         					 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 	printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 	scanf("%s",coustomer.name);
+											fflush(stdin);
+                         					printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+										 	scanf("%s",coustomer.add);
+                        				 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+										 	scanf("%s",coustomer.email);
+                         					printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+										 	scanf("%s",coustomer.ph);
+                         					fprintf(fp3,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 					printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 					fclose(fp3);
+					   	 					printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   					 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+											fflush(stdin);
+											scanf("%c",&ch);
+											if((ch=='Y')||(ch=='y'))
+											{
+													menu();
+					   	 	
+										    }
+											else if((ch=='N')||(ch=='n'))
+											{
+												login();
+											}  
+                      							   	 
+                           					 
+				     					}
+				     					break;
+				     			case 4:  printf("\n\t\t\t\t[-------------------------*IPHONE 14 PRO MAX*---------------------------]\n");
+				    		 		     printf("\n\t\t\t\t\t*Iphone 14 Pro Max*");
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tApple");
+									 	printf("\n\t\t\t\t\tModel Name:\t\t\tIphone");
+										printf("\n\t\t\t\t\tOS:\t\t\t\tIOS");
+										printf("\n\t\t\t\t\tMemory Storage Capacity:\t128GB");
+									 	printf("\n\t\t\t\t\tColour:\t\t\t\tGold");
+									 	printf("\n\t\t\t\t\tProcessor:\t\t\tApple A16 Bionic");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 1,40,000.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     							 FILE *fp4;
+                        					 	fp4=fopen("Iphone_14_Pro_Max_coustomer_rec.txt","a");
+                     					    	fflush(stdin);            
+                    					     	 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp4,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp4); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}  
+					   	 
+                        						
+                       							  	
+                       			        }
+                       			        break;
+                       			default: printf("\n Please Select Your Right Choise");
+                       			        	         break;
+				                }
+				    }
+				    else if(no==2)
+				    {
+					         printf("\n\t\t\t\t[-------------------------*GROCERIES*---------------------------]\n");
+				            
+	       				   	 
+	       		   			 printf("\n\t\t\t\t\t1...TATA TEA PREMIUM");
+							 printf("\n\t\t\t\t\t2...AASHIRVAAD SVASTI PURE COW GHEE DESI GHEE");
+							 printf("\n\t\t\t\t\t3...UTROACTIVE KETO ATTA");
+							 printf("\n\t\t\t\t\t4...FERRERO ROCHER PREMIUM CHOCOLATE\n");
+							 printf("\n\t\t\t\t[---------------------------------------------------------------]\n\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n2);
+							 switch(n2)
+							 {
+							 	case 1: printf("\n\t\t\t\t[-------------------------*TATA TEA PREMIUM*---------------------------]\n");
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tTata Tea");
+									 	printf("\n\t\t\t\t\tForm:\t\t\t\tPowder");
+										printf("\n\t\t\t\t\tFlavour:\t\t\tPlain");
+										printf("\n\t\t\t\t\tTea Variety:\t\t\tBlack");
+					 					printf("\n\t\t\t\t\tWeight:\t\t\t\t1500Grams");
+					 					printf("\n\t\t\t\t\tDiet Type:\t\t\tVegetarian");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 494.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp21;
+                         					fp21=fopen("Tata_Tea_Premium_Coustomer_Rec.txt","a");
+                         				      printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp21,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp21);
+					   	
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												} 
+                      							   	 
+                           					 
+				     					}
+				     					break;
+				     		    case 2:printf("\n\t\t\t\t[-------------------------*AASHIRVAAD SVASTI PURE COW GHEE DESI GHEE*---------------------------]\n");
+								  
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tAashirvaad");
+									 	printf("\n\t\t\t\t\tForm:\t\t\t\tLiquid");
+										printf("\n\t\t\t\t\tFlavour:\t\t\tGhee");
+										printf("\n\t\t\t\t\tBiological Source:\t\tCow");
+					 					printf("\n\t\t\t\t\tWeight:\t\t\t\t899Grams");
+					 					printf("\n\t\t\t\t\tDiet Type:\t\t\tVegetarian");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 572.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp22;
+                         					fp22=fopen("Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec.txt","a");
+                         					printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp22,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp22); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}   
+                      							   	 
+                           					 
+				     					}
+				     						break;
+				     		    case 3: printf("\n\t\t\t\t[-------------------------*NUTROACTIVE KETO ATTA*---------------------------]\n");
+								        printf("\n\t\t\t\t\t*NutroActive Keto Atta*");
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tNutroActive");
+									 	printf("\n\t\t\t\t\tForm:\t\t\t\tPowder");
+										printf("\n\t\t\t\t\tFlavour:\t\t\tWheat");
+										printf("\n\t\t\t\t\tSpecialty:\t\t\tLow Carb");
+					 					printf("\n\t\t\t\t\tWeight:\t\t\t\t1 KiloGrams");
+					 					printf("\n\t\t\t\t\tDiet Type:\t\t\tVegetarian");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 599.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp23;
+                         					fp23=fopen("NutroActive_Keto_Atta_Coustomer_Rec.txt","a");
+                         					 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp23,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp23); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}   
+                      							    
+                           					                                                                   
+				     					} 
+				     						break;
+				     		    case 4: printf("\n\t\t\t\t[-------------------------*FERRERO ROCHER PREMIUM CHOCOLATE*---------------------------]\n");
+								 printf("\n\t\t\t\t\t*Ferrero Rocher Premium Chocolate*");
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tFerrero Rocher");
+									 	printf("\n\t\t\t\t\tForm:\t\t\t\tRocks");
+										printf("\n\t\t\t\t\tFlavour:\t\t\tChocolate");
+										printf("\n\t\t\t\t\tOccasion:\t\t\tAnniversary,Birthday,Wedding,Gifting");
+					 					printf("\n\t\t\t\t\tSize:\t\t\t\t16 Count(Pack Of 1)");
+					 					printf("\n\t\t\t\t\tDiet Type:\t\t\tVegetarian");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 489.00");
+					 					printf("\n\n\t\t\t\t\tReady For Buy (Y/N) \n");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp24;
+                         					fp24=fopen("Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec.txt","a");
+                         					 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp24,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp24); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}  
+                      							   	 
+                           					 
+				     					}
+				     				
+								default: printf("\n Please Select Your Right Choise");	
+								         break;
+								}        	                                                                
+					}
+					else if(no==3)
+					{
+					        printf("\n\t\t\t\t[-------------------------*FURNITURE*---------------------------]\n");
+					         
+	       				   	 
+	       		   			 printf("\n\t\t\t\t\t1...WAKEFIT QUEEN WOOD BED");
+							 printf("\n\t\t\t\t\t2...THE FABRIZZO STUDY TABLE");
+							 printf("\n\t\t\t\t\t3...TREVI EDO 3 SEATER SOFA");
+							 printf("\n\t\t\t\t\t4...SATTVA CLASSIC BEAN BAG\n");
+							 printf("\n\t\t\t\t[--------------------------------------------------------------]\n\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n1);
+							 switch(n1)
+					 		 {
+							   	case 1:
+					 		    		printf("\n\t\t\t\t[-------------------------*WAKEFIT QUEEN WOOD BED*---------------------------]\n");
+					 					printf("\n\t\t\t\t\tBrand:\t\t\t\tWakefit");
+					 					printf("\n\t\t\t\t\tMaterial:\t\t\tEngineered Wood");
+										printf("\n\t\t\t\t\tProduct Dimensions:\t\t\t\t2.1L*1.57W*0.8H Meters");
+										printf("\n\t\t\t\t\tStyle:\tTaurus With Storage");
+					 					printf("\n\t\t\t\t\tColour:\t\t\t\tBrown");
+					 					printf("\n\t\t\t\t\tProcessor:\t\t\tBasic Headboard");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 11,484.00");
+					 					printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                    					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                    				 		 FILE *fp31;
+                    				     	fp31=fopen("Wakefit_Queen_Wood_Bed_Coustomer_Rec.txt","a");
+                        				 	 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp31,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp31); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}     
+                         					
+                         					break;
+				     					}	
+                     	
+					            case 2: printf("\n\t\t\t\t[-------------------------*THE FABRIZZO STUDY TABLE*---------------------------]\n");
+					  		  	    	
+				 						printf("\n\t\t\t\t\tBrand:\t\t\t\tGeneric");
+				 						printf("\n\t\t\t\t\tShape:\t\t\tRectangular");
+										printf("\n\t\t\t\t\tDesk Design:\t\t\t\tWriting Desk");
+				 						printf("\n\t\t\t\t\tColour:\t\t\t\tDark Red");
+				 						printf("\n\t\t\t\t\tProcessor:\t\t\tSnapdragon 8Gen+1");
+				 						printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 91,450.00");
+				 						printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n ");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{
+                     	
+                     						 FILE *fp32;
+                         					fp32=fopen("The_Fabrizzo_Study_Table_Coustomer_Rec.txt","a");
+                         					 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp32,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp32); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												} 
+                         					 
+                         					break;
+					 				    }
+					 	        case 3:  printf("\n\t\t\t\t[-------------------------*TREVI EDO 3 SEATER SOFA*---------------------------]\n");
+							 		
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tTrevi");
+									 	printf("\n\t\t\t\t\tType:\t\t\t\tSofa Bed");
+										printf("\n\t\t\t\t\tRoom Type:\t\t\tLiving Room");
+					 					printf("\n\t\t\t\t\tColour:\t\t\t\tGreen");
+					 					printf("\n\t\t\t\t\tSpecial Feature:\t\tSpace Saving");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 21,499.00");
+					 					printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     						 FILE *fp33;
+                         					fp33=fopen("Trevi_Edo_3_Seater_Sofa_Coustomer_Rec.txt","a");
+                         					 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp33,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp33); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}   
+                      							   	 
+                           					 break;
+				     					}
+				     			case 4: printf("\n\t\t\t\t[-------------------------*SATTVA CLASSIC BEAN BAG*---------------------------]\n");
+				    		 		    
+									 	printf("\n\t\t\t\t\tBrand:\t\t\t\tSattva");
+									 	printf("\n\t\t\t\t\tPattern:\t\t\tBean Bag");
+										printf("\n\t\t\t\t\tItem Shape:\t\t\tTeardrop");
+									 	printf("\n\t\t\t\t\tColour:\t\t\t\tBrown");
+									 	printf("\n\t\t\t\t\tMaterial:\t\t\tFaux Leather");
+										printf("\n\t\t\t\t\tPrice:\t\t\t\tRs 2,000.00");
+					 					printf("\n\n\t\t\t\t\tREADY FOR BUY (Y/N)\n");
+				 						fflush(stdin);
+                    					scanf("%c",&ch);
+                     					if((ch=='Y')||(ch=='y'))
+                     					{	
+                     		
+                     							 FILE *fp34;
+                        					 	fp34=fopen("Sattva_Classic_Bean_Bag_Coustomer_Rec.txt","a");
+                     					    	 printf("\n\t\t\t\t[-------------------------*PLEASE FILL YOUR DETAILS*---------------------------]\n");            
+                        				 		printf("\n\t\t\t\t\tENTER YOUR NAME:-");
+										 		scanf("%s",coustomer.name);
+												fflush(stdin);
+                         						printf("\n\t\t\t\t\tENTER YOUR ADDRESS:-");
+											 	scanf("%s",coustomer.add);
+                        					 	printf("\n\t\t\t\t\tENTER YOUR EMAIL:-");
+											 	scanf("%s",coustomer.email);
+                         						printf("\n\t\t\t\t\tENTER YOUR PHONE:-");
+											 	scanf("%s",coustomer.ph);
+                         						fprintf(fp34,"%s \n%s \n%s \n%s",coustomer.name,coustomer.add,coustomer.email,coustomer.ph);
+                         
+					   	 						printf("\n\t\t\t\t\t*YOUR PRODUCT IS CONFIRM*\n");
+					   	 						fclose(fp34); 
+					   	 						printf("\n\t\t\t\t[-------------------------------------------------------------------------------]\n");
+					   						 	printf("\nDO YOU WANT TO CONTINUE SHOPPING PRESS 'Y' AND 'N' FOR LOGIN PAGE\n");
+												fflush(stdin);
+												scanf("%c",&ch);
+												if((ch=='Y')||(ch=='y'))
+												{
+													menu();
+					   	 	
+										 	    }
+												else if((ch=='N')||(ch=='n'))
+												{
+													login();
+												}  
+					   	 
+                        						 	
+                       							  	
+                       			        }		  	
+                                default: printf("\n Please Select Your Right Choise");
+				                }
+				    }
+					else if(no==4)	
+					{
+					    printf("\n Please Select Your Right Choise");
+				    }     
+	        	  	break;
+	        	  		     
+	       		   
+					
+			case 2:	  printf("\n\t\t\t\t[---------------*SHOPPING RECORDS*---------------]\n");
+    	          	  printf("\n\t\t\t\t\t1.....SMARTPHONES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t2.....GROCERIES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t3....FURNITURE CUSTOMER RECORDS\n");
+    	          	  printf("\n\t\t\t\t[------------------------------------------------]\n\n");
+    	           	  printf("\nSELECT YOUR CHOICE\n");
+	                  scanf("%d",&no);
+					  if(no==1)
+					  {      printf("\n\t\t\t\t[---------------*SMARTPHONES CUSTOMER RECORDS*---------------]\n");
+	       		   			 printf("\n\t\t\t\t\t1...ONEPLUS 10T 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t2...SAMSUNG GALAXY S22 ULTRA 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...XIAOMI 12 PRO 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...IPHONE 14 PRO MAX CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[------------------------------------------------------------]\n\n");
+					  	     printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n1);
+					  	switch(n1)
+					  	{
+					  		case 1: oneplus_rec();
+                   				    break;  
+							case 2: Samsung_Galaxy_S22_Ultra_Rec();
+							        break;
+							case 3: Xiaomi_12_Pro_Rec();
+							        break;
+							case 4:Iphone_14_Pro_Max_Rec();
+							       break;
+						  }
+						
+					  }
+					  else if(no==2)  
+					  {      printf("\n\t\t\t\t[-------------------------*GROCERIES CUSTOMER RECORDS*---------------------------]\n");
+				            
+	       				   	 
+	       		   			 printf("\n\t\t\t\t\t1...TATA TEA PREMIUM CUSTOMER RECORDS ");
+							 printf("\n\t\t\t\t\t2...AASHIRVAAD SVASTI PURE COW GHEE DESI GHEE CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...UTROACTIVE KETO ATTA CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...FERRERO ROCHER PREMIUM CHOCOLATE CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[--------------------------------------------------------------------------------]\n\n");
+					  	     
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n2);
+							 switch(n2)
+							 {
+							 	case 1: Tata_Tea_Premium_Coustomer_Rec();
+                   				 	    break;  
+								case 2: Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Rec();
+							     	    break;
+								case 3: NutroActive_Keto_Atta_Coustomer_Rec();
+							   		    break;
+								case 4: Ferrero_Rocher_Premium_Chocolate_Coustomer_Rec();
+							  		    break;
+							 }
+					  	
+					  }   
+					  else if(no==3)
+					  {     printf("\n\t\t\t\t[-------------------------*FURNITURE CUSTOMER RECORDS*---------------------------]\n");
+					         
+	       				   	 
+	       		   			 printf("\n\t\t\t\t\t1...WAKEFIT QUEEN WOOD BED CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t2...THE FABRIZZO STUDY TABLE CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...TREVI EDO 3 SEATER SOFA CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...SATTVA CLASSIC BEAN BAG CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[------------------------------------------------------------------------------]\n\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n1);
+							 switch(n1)
+							 {
+							 	case 1: Wakefit_Queen_Wood_Bed_Coustomer_Rec();
+                   				    break;  
+								case 2: The_Fabrizzo_Study_Table_Coustomer_Rec();
+							        break;
+								case 3: Trevi_Edo_3_Seater_Sofa_Coustomer_Rec();
+							        break;
+								case 4: Sattva_Classic_Bean_Bag_Coustomer_Rec();
+							       break;
+							 }
+					  }
+			          break;
+			case 3:   printf("\n\t\t\t\t[---------------*UPDATE RECORDS*---------------]\n");
+    	          	  printf("\n\t\t\t\t\t1.....SMARTPHONES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t2.....GROCERIES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t3....FURNITURE CUSTOMER RECORDS\n");
+    	          	  printf("\n\t\t\t\t[------------------------------------------------]\n\n");
+    	           	  printf("\nSELECT YOUR CHOICE\n");
+			          
+	                  scanf("%d",&no);
+					  if(no==1)
+					  {      printf("\n\t\t\t\t[---------------SMARTPHONES CUSTOMER RECORDS---------------]\n");
+	       		   			 printf("\n\t\t\t\t\t1...ONEPLUS 10T 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t2...SAMSUNG GALAXY S22 ULTRA 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...XIAOMI 12 PRO 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...IPHONE 14 PRO MAX CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[----------------------------------------------------------]\n\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+					  	     
+							 scanf("%d",&n1);
+							 switch(n1)
+							 {
+							 	case 1: oneplus_update_rec();
+                   				 	   break;  
+							    case 2:samsung_update_rec();
+							           break;
+							    case 3:xiaomi_update_rec();
+							           break;
+							    case 4:iphone_update_rec();
+							           break;
+							 }
+					  	
+			
+		         		}
+						 else if(no==2)  
+					 	 {   printf("\n\t\t\t\t[-------------------------*GROCERIES CUSTOMER RECORDS*---------------------------]\n");
+				            
+	       				   	 
+	       		   			 printf("\n\t\t\t\t\t1...TATA TEA PREMIUM CUSTOMER RECORDS ");
+							 printf("\n\t\t\t\t\t2...AASHIRVAAD SVASTI PURE COW GHEE DESI GHEE CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...UTROACTIVE KETO ATTA CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...FERRERO ROCHER PREMIUM CHOCOLATE CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[--------------------------------------------------------------------------------]\n\n");
+					  	     
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n2);
+							 switch(n2)
+							 {
+							 	case 1: Tata_Tea_Premium_update_Rec();
+                   				 	    break;  
+								case 2: Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_update_Rec();
+							     	    break;
+								case 3: NutroActive_Keto_Atta_update_Rec();
+							   		    break;
+								case 4: Ferrero_Rocher_Premium_update_Coustomer_Rec();
+							  		    break;
+							 }
+					  	
+					  		} 
+							else if(no==3)
+						    {    printf("\n\t\t\t\t[-------------------------*FURNITURE CUSTOMER RECORDS*---------------------------]\n");
+					         
+	       				   	 
+	       		   				 printf("\n\t\t\t\t\t1...WAKEFIT QUEEN WOOD BED CUSTOMER RECORDS");
+								 printf("\n\t\t\t\t\t2...THE FABRIZZO STUDY TABLE CUSTOMER RECORDS");
+								 printf("\n\t\t\t\t\t3...TREVI EDO 3 SEATER SOFA CUSTOMER RECORDS");
+								 printf("\n\t\t\t\t\t4...SATTVA CLASSIC BEAN BAG CUSTOMER RECORDS\n");
+								 printf("\n\t\t\t\t[------------------------------------------------------------------------------]\n\n");
+								 printf("\nSELECT YOUR CHOICE\n"); 
+					 	 	     
+								 scanf("%d",&n1);
+								 switch(n1)
+								 {
+								 	case 1: Wakefit_Queen_Wood_Bed_update_Rec();
+                   				    		  break;  
+									case 2: The_Fabrizzo_Study_Table_update_Rec();
+							     		  	 break;
+									case 3: Trevi_Edo_3_Seater_Sofa_update_Rec();
+							     		  	 break;
+									case 4: Sattva_Classic_Bean_Bag_update_Rec();
+									      	 break;
+					   		        }   
+					        }    
+					        break;   
+			case 4:    printf("\n\t\t\t\t[---------------*DELETE RECORDS*---------------]\n");
+    	          	  printf("\n\t\t\t\t\t1.....SMARTPHONES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t2.....GROCERIES CUSTOMER RECORDS");
+    	          	  printf("\n\t\t\t\t\t3....FURNITURE CUSTOMER RECORDS\n");
+    	          	  printf("\n\t\t\t\t[------------------------------------------------]\n\n");
+    	           	  printf("\nSELECT YOUR CHOICE\n"); 
+		
+	                  scanf("%d",&no);
+					  if(no==1)
+					  {      printf("\n\t\t\t\t[---------------SMARTPHONES CUSTOMER RECORDS---------------]\n");
+	       		   			 printf("\n\t\t\t\t\t1...ONEPLUS 10T 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t2...SAMSUNG GALAXY S22 ULTRA 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t3...XIAOMI 12 PRO 5G CUSTOMER RECORDS");
+							 printf("\n\t\t\t\t\t4...IPHONE 14 PRO MAX CUSTOMER RECORDS\n");
+							 printf("\n\t\t\t\t[----------------------------------------------------------]\n\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+					  	     
+							 scanf("%d",&n1);
+							 switch(n1)
+							 {
+							 	case 1: oneplus_delete_rec();
+                   				 	    break;  
+                   				case 2: samsung_delete_rec();
+                   				        break;
+                   				case 3: xiaomi_delete_rec();
+                   				        break;
+                   				case 4: iphone_delete_rec();
+                   				        break;					   
+							 }
+					  	
+			
+		         		}
+						 else if(no==2)  
+					 	 {
+					  	     printf("\t\t\t\t\t***Groceries_Coustomer_Records***");
+	       				   	 
+	       		   			 printf("\n1...Tata_Tea_Premium_Coustomer_Records");
+							 printf("\n2...Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_Coustomer_Records");
+							 printf("\n3...NutroActive_Keto_Atta_Coustomer_Records");
+							 printf("\n4...Ferrero_Rocher_Premium_Chocolate_Coustomer_Records\n");
+							 printf("\nSELECT YOUR CHOICE\n");
+							 scanf("%d",&n2);
+							 switch(n2)
+							 {
+							 	case 1: Tata_Tea_Premium_delete_Rec();
+                   				 	    break;  
+								case 2: Aashirvaad_Svasti_Pure_Cow_Ghee_Desi_Ghee_delete_Rec();
+							     	    break;
+								case 3: NutroActive_Keto_Atta_delete_Rec();
+							   		    break;
+								case 4: Ferrero_Rocher_Premium_delete_Coustomer_Rec();
+							  		    break;
+							 }
+					  	
+					  		} 
+							else if(no==3)
+						    {
+					 	 	     printf("\t\t\t\t\t***Furniture_Coustomer_Records***");
+	       					   	 
+	       		   				 printf("\n1...Wakefit_Queen_Wood_Bed_Coustomer_Records");
+								 printf("\n2...The_Fabrizzo_Study_Table_Coustomer_Records");
+								 printf("\n3...Trevi_Edo_3_Seater_Sofa_Coustomer_Records");
+								 printf("\n4...Sattva_Classic_Bean_Bag_Coustomer_Records\n");
+								 printf("\nSELECT YOUR CHOICE\n");
+								 scanf("%d",&n1);
+								 switch(n1)
+								 {
+								 	case 1: Wakefit_Queen_Wood_Bed_delete_Rec();
+                   				    		  break;  
+									case 2: The_Fabrizzo_Study_Table_delete_Rec();
+							     		  	 break;
+									case 3: Trevi_Edo_3_Seater_Sofa_delete_Rec();
+							     		  	 break;
+									case 4: Sattva_Classic_Bean_Bag_delete_Rec();
+									      	 break;
+					   		        }   
+					        }    
+					        break;            
+			case 5:           login();	   
+				 	       break;
+                               
+			
+    	       
+        }
+		 
+
+} 
